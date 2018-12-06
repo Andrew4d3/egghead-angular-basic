@@ -8,7 +8,10 @@ import { MailService } from "./mail.service";
 @NgModule({
   declarations: [AppComponent, SimpleFormComponent],
   imports: [BrowserModule],
-  providers: [MailService],
+  providers: [
+    { provide: "mail", useClass: MailService },
+    { provide: "api", useValue: "http://localhost:5000" }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
