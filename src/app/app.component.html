@@ -36,7 +36,16 @@
 </ul>
 
 <ul>
-  <app-simple-form *ngFor="let message of mail.messages" [message]="message">{{
-    message
-  }}</app-simple-form>
+  <li *ngFor="let message of mail.messages">{{ message }}</li>
+</ul>
+
+<ul>
+  <app-simple-form
+    *ngFor="let message of mail.messages; let i = index"
+    [message]="message"
+    [index]="i"
+    (update)="onUpdate($event)"
+  >
+    {{ message }}
+  </app-simple-form>
 </ul>

@@ -8,4 +8,8 @@ export class MailService {
   messages = ["Hello world", "let's have fun", "I love JS"];
 
   constructor() {}
+
+  public updateMessageByIndex(index, message) {
+    this.messages[index] = message;
+  }
 }

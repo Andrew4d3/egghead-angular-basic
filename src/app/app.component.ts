@@ -10,4 +10,9 @@ export class AppComponent {
   title = "Angular2 - Fundamentals";
 
   constructor(@Inject("mail") private mail, @Inject("api") private api) {}
+
+  onUpdate(event) {
+    console.log(event);
+    this.mail.updateMessageByIndex(event.index, event.text);
+  }
 }
