@@ -10,7 +10,27 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
       </button>
     </div>
   `,
-  styles: []
+  styles: [
+    `
+      :host {
+        display: flex;
+        flex-direction: column;
+      }
+
+      input:focus {
+        font-weight: bold;
+        outline: none;
+      }
+
+      * {
+        font-family: monospace;
+      }
+
+      button {
+        border: none;
+      }
+    `
+  ]
 })
 export class SimpleFormComponent implements OnInit {
   constructor() {}

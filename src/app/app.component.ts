@@ -1,10 +1,16 @@
 import { Component, Inject } from "@angular/core";
-import { MailService } from "./mail.service";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  styleUrls: ["./app.component.scss"],
+  styles: [
+    `
+      app-simple-form {
+        margin-top: 10px;
+      }
+    `
+  ]
 })
 export class AppComponent {
   title = "Angular2 - Fundamentals";
