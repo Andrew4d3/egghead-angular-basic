@@ -4,7 +4,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
   selector: "app-simple-form",
   template: `
     <div>
-      <input #myInput type="text" [(ngModel)]="message" />
+      <input
+        #myInput
+        type="text"
+        [(ngModel)]="message"
+        [ngClass]="{ mousedown: isMouseDown }"
+        (mousedown)="isMouseDown = true"
+        (mouseup)="isMouseDown = false"
+        (mouseleave)="isMouseDown = false"
+      />
       <button (click)="update.emit({ text: message, index: index })">
         Click Me!
       </button>
@@ -29,10 +37,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
       button {
         border: none;
       }
+
+      .mousedown {
+        border: 2px solid green;
+      }
     `
   ]
 })
 export class SimpleFormComponent implements OnInit {
+  isMouseDown: boolean;
+
   constructor() {}
 
   @Input() message;
