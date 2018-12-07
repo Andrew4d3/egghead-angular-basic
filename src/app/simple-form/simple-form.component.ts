@@ -13,7 +13,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
         (mouseup)="isMouseDown = false"
         (mouseleave)="isMouseDown = false"
       />
-      <button (click)="update.emit({ text: message, index: index })">
+      <button
+        class="white bg-black code"
+        (click)="update.emit({ text: message, index: index })"
+      >
         Click Me!
       </button>
     </div>
